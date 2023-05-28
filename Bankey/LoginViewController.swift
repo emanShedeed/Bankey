@@ -52,7 +52,6 @@ private extension LoginViewController{
         subtitleLabel.text = "Your Premium Source for all things banking"
         subtitleLabel.numberOfLines = 2
         subtitleLabel.textAlignment = .center
-//        subtitleLabel.font = UIFont.systemFont(ofSize: 20, weight: .thin)
         
         //signInButton
         signInButton.configuration = .filled()

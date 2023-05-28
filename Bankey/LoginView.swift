@@ -36,12 +36,10 @@ private extension LoginView{
         backgroundColor = .secondarySystemBackground
         
         userNameTextField.placeholder = "User Name"
-        userNameTextField.setLeftPaddingPoints(7)
         userNameTextField.delegate = self
         
         passwordTextField.placeholder = "Password"
         passwordTextField.isSecureTextEntry = true
-        passwordTextField.setLeftPaddingPoints(7)
         passwordTextField.delegate = self
         
 

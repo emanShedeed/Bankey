@@ -12,7 +12,6 @@
 		BD9D39EB2A1B4F910068403A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD9D39EA2A1B4F910068403A /* Assets.xcassets */; };
 		BD9D39EE2A1B4F910068403A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9D39EC2A1B4F910068403A /* LaunchScreen.storyboard */; };
 		BD9D39F62A1B59500068403A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D39F52A1B59500068403A /* LoginView.swift */; };
-		BDC358DE2A1E4523005F2CEA /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC358DD2A1E4523005F2CEA /* UITextFieldExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +22,6 @@
 		BD9D39ED2A1B4F910068403A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD9D39EF2A1B4F910068403A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD9D39F52A1B59500068403A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		BDC358DD2A1E4523005F2CEA /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,17 +84,8 @@
 		BDC358DB2A1E4502005F2CEA /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
-				BDC358DC2A1E450E005F2CEA /* Extensions */,
 			);
 			name = SupportFiles;
-			sourceTree = "<group>";
-		};
-		BDC358DC2A1E450E005F2CEA /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				BDC358DD2A1E4523005F2CEA /* UITextFieldExtension.swift */,
-			);
-			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +159,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD9D39F62A1B59500068403A /* LoginView.swift in Sources */,
-				BDC358DE2A1E4523005F2CEA /* UITextFieldExtension.swift in Sources */,
 				BD9D39E62A1B4F900068403A /* LoginViewController.swift in Sources */,
 				BD9D39E22A1B4F900068403A /* AppDelegate.swift in Sources */,
 			);
