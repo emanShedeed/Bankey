@@ -54,7 +54,6 @@
 		BD9D39E02A1B4F900068403A /* Bankey */ = {
 			isa = PBXGroup;
 			children = (
-				BDC358DB2A1E4502005F2CEA /* SupportFiles */,
 				BD9D39F72A1B5BFF0068403A /* Files */,
 				BD9D39F82A1B5C2D0068403A /* Login */,
 				BD9D39E12A1B4F900068403A /* AppDelegate.swift */,
@@ -79,13 +78,6 @@
 				BD9D39E52A1B4F900068403A /* LoginViewController.swift */,
 			);
 			name = Login;
-			sourceTree = "<group>";
-		};
-		BDC358DB2A1E4502005F2CEA /* SupportFiles */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = SupportFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
