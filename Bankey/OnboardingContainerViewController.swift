@@ -48,7 +48,14 @@ class OnboardingContainerViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
-        pages = [ViewController1(), ViewController2(), ViewController3()]
+        
+        let firstOnboardingPage = OnboardingViewController(imageName: "delorean", infoMessage: "Bankey is faster, easier to use, and has a brand new look and feel that will make you feel like you are back in the 80s.")
+        
+        let secondOnboardingPage = OnboardingViewController( imageName: "world", infoMessage: "Move your money around the world quickly and securely.")
+        
+        let thirdOnboardingPage = OnboardingViewController (imageName: "thumbs", infoMessage:  "Learn more at www.bankey.com.")
+        
+        pages = [firstOnboardingPage, secondOnboardingPage, thirdOnboardingPage]
    
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -88,12 +95,7 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
     
 }
 
-class ViewController1: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemRed
-    }
-}
+
 
 class ViewController2: UIViewController {
     override func viewDidLoad() {
