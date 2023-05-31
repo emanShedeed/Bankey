@@ -7,6 +7,9 @@
 
 import UIKit
 
+protocol LoginViewControllerDelegate: AnyObject {
+    func didLogin()
+}
 
 class LoginViewController: UIViewController {
     
@@ -15,6 +18,8 @@ class LoginViewController: UIViewController {
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
+    
+    weak var delegate: LoginViewControllerDelegate?
     
     var isDataEmpty : Bool {
         if loginView.userNameTextField.text == "" || loginView.passwordTextField.text == "" {
@@ -135,11 +140,13 @@ private extension LoginViewController{
         errorMessageLabel.text = message
     }
 }
+
 // MARK: Actions
 extension LoginViewController {
     @objc func SignInButtonTapped(){
         errorMessageLabel.isHidden = true
-      login()
+        login()
+        delegate?.didLogin()
     }
     
 }
