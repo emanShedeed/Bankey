@@ -9,8 +9,6 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
     
-    let closeButton = UIButton(type:.system)
-    
     let stackView = UIStackView()
     let imageView = UIImageView()
     let infoLabel = UILabel()
@@ -46,7 +44,7 @@ private extension OnboardingViewController{
     
     func style() {
         
-        closeButton.setTitle("Close", for: [])
+      
         nextButton.setTitle("Next", for: [])
   
         imageView.image = UIImage(named: imageName)
@@ -57,28 +55,25 @@ private extension OnboardingViewController{
         
         infoLabel.numberOfLines = 0
         infoLabel.textAlignment = .center
+        infoLabel.font = UIFont.preferredFont(forTextStyle: .title3)
         infoLabel.text = infoMessage
         
     }
     
     func layout(){
         
-        view.addSubview(closeButton)
+       
         view.addSubview(stackView)
         view.addSubview(nextButton)
         
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(infoLabel)
         
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
+      
         stackView.translatesAutoresizingMaskIntoConstraints = false
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         
-        //closeButton
-        NSLayoutConstraint.activate([
-            closeButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 1),
-            closeButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1)
-        ])
+      
         
         //stackView
         NSLayoutConstraint.activate([

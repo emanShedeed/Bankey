@@ -11,38 +11,16 @@ class OnboardingContainerViewController: UIViewController {
     
     var pageViewController : UIPageViewController
     var pages : [UIViewController]
-    var currentVC : UIViewController? {
-        didSet{
-            
-        }
-    }
-    
-    
+    var currentVC : UIViewController
+    let closeButton = UIButton(type:.system)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemPurple
+        setup()
+        style()
+        layout()
 
-        addChild(pageViewController)
-        view.addSubview(pageViewController.view)
-        pageViewController.didMove(toParent: self)
-        
-        pageViewController.dataSource = self
-        
-        pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            pageViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
-            pageViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            pageViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            pageViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-        
-        if let firstVC = pages.first{
-            pageViewController.setViewControllers([firstVC], direction: .forward, animated: false)
-            currentVC = firstVC
-        }
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -56,6 +34,8 @@ class OnboardingContainerViewController: UIViewController {
         let thirdOnboardingPage = OnboardingViewController (imageName: "thumbs", infoMessage:  "Learn more at www.bankey.com.")
         
         pages = [firstOnboardingPage, secondOnboardingPage, thirdOnboardingPage]
+        
+        currentVC = pages.first!
    
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -84,30 +64,62 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
     }
     
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        
-        if let currentVC {
-            return pages.firstIndex(of: currentVC) ?? 0
-        } else{
-            return 0
-        }
-        
+        return pages.firstIndex(of: currentVC) ?? 0
     }
     
 }
 
 
+private extension OnboardingContainerViewController {
+    
+    func setup(){
+        pageViewController.dataSource = self
+        
+        if let firstVC = pages.first{
+            pageViewController.setViewControllers([firstVC], direction: .forward, animated: false)
+            currentVC = firstVC
+        }
+    }
+    
+    func style(){
+        view.backgroundColor = .systemPurple
+        
+        closeButton.setTitle("Close", for: [])
+        closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .primaryActionTriggered)
+    }
+    
+    func layout(){
+        
+        pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+      
+        
+        addChild(pageViewController)
+        view.addSubview(pageViewController.view)
+        pageViewController.didMove(toParent: self)
+        
 
-class ViewController2: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBlue
+        view.addSubview(closeButton)
+        //pageViewController
+        NSLayoutConstraint.activate([
+            pageViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            pageViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            pageViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            pageViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        //closeButton
+        NSLayoutConstraint.activate([
+            closeButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2),
+            closeButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2)
+        ])
+        
     }
 }
 
-class ViewController3: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemGreen
+extension OnboardingContainerViewController{
+    
+    @objc func closeButtonTapped(){
+        
     }
 }
-
