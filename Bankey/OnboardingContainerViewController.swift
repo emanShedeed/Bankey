@@ -7,12 +7,18 @@
 
 import UIKit
 
+protocol OnboardingContainerViewControllerDelegate: AnyObject {
+    func didFinishOnboarding()
+}
+
 class OnboardingContainerViewController: UIViewController {
     
     var pageViewController : UIPageViewController
     var pages : [UIViewController]
     var currentVC : UIViewController
     let closeButton = UIButton(type:.system)
+    
+    weak var delegate: OnboardingContainerViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,6 +126,6 @@ private extension OnboardingContainerViewController {
 extension OnboardingContainerViewController{
     
     @objc func closeButtonTapped(){
-        
+        delegate?.didFinishOnboarding()
     }
 }

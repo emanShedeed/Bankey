@@ -17,11 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
-        let LoginViewController = LoginViewController()
-        LoginViewController.delegate = self
-        window?.rootViewController = LoginViewController
+//        let LoginViewController = LoginViewController()
+//        LoginViewController.delegate = self
+//        window?.rootViewController = LoginViewController
         
-//        window?.rootViewController = OnboardingContainerViewController()
+        let OnboardingContainerViewController = OnboardingContainerViewController()
+        OnboardingContainerViewController.delegate = self
+        window?.rootViewController = OnboardingContainerViewController
 
         return true
     }
@@ -35,4 +37,11 @@ extension AppDelegate: LoginViewControllerDelegate {
         
     }
 
+}
+extension AppDelegate: OnboardingContainerViewControllerDelegate {
+    func didFinishOnboarding() {
+        
+    }
+    
+    
 }
