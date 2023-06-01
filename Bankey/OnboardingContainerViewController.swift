@@ -35,11 +35,13 @@ class OnboardingContainerViewController: UIViewController {
         layout()
 
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         setup()
         style()
     }
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
@@ -117,19 +119,15 @@ private extension OnboardingContainerViewController {
     }
     
     func layout(){
-        
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.translatesAutoresizingMaskIntoConstraints = false
         nextButton.translatesAutoresizingMaskIntoConstraints = false
     
-      
-        
         addChild(pageViewController)
         view.addSubview(pageViewController.view)
         pageViewController.didMove(toParent: self)
-        
-
+//
         view.addSubview(closeButton)
         view.addSubview(backButton)
         view.addSubview(nextButton)

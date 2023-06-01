@@ -15,6 +15,7 @@
 		BD9D39EE2A1B4F910068403A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9D39EC2A1B4F910068403A /* LaunchScreen.storyboard */; };
 		BD9D39F62A1B59500068403A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D39F52A1B59500068403A /* LoginView.swift */; };
 		BDA66C2D2A27A11200930EDB /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA66C2C2A27A11200930EDB /* LogOutViewController.swift */; };
+		BDA834692A287A86009DEB43 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA834682A287A86009DEB43 /* LocalState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BD9D39EF2A1B4F910068403A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD9D39F52A1B59500068403A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BDA66C2C2A27A11200930EDB /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
+		BDA834682A287A86009DEB43 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +71,9 @@
 		BD9D39E02A1B4F900068403A /* Bankey */ = {
 			isa = PBXGroup;
 			children = (
-				BDA66C2B2A27A0FC00930EDB /* LogOut */,
+				BDA834672A287A5C009DEB43 /* Utilites */,
 				BD9D39F72A1B5BFF0068403A /* Files */,
+				BDA66C2B2A27A0FC00930EDB /* LogOut */,
 				BD9B48A82A24D6F4000F7A5F /* Onboarding */,
 				BD9D39F82A1B5C2D0068403A /* Login */,
 				BD9D39E12A1B4F900068403A /* AppDelegate.swift */,
@@ -103,6 +106,14 @@
 				BDA66C2C2A27A11200930EDB /* LogOutViewController.swift */,
 			);
 			name = LogOut;
+			sourceTree = "<group>";
+		};
+		BDA834672A287A5C009DEB43 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				BDA834682A287A86009DEB43 /* LocalState.swift */,
+			);
+			name = Utilites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDA66C2D2A27A11200930EDB /* LogOutViewController.swift in Sources */,
+				BDA834692A287A86009DEB43 /* LocalState.swift in Sources */,
 				BD9D39F62A1B59500068403A /* LoginView.swift in Sources */,
 				BD9D39E62A1B4F900068403A /* LoginViewController.swift in Sources */,
 				BD9B48AC2A24FD40000F7A5F /* OnboardingViewController.swift in Sources */,
