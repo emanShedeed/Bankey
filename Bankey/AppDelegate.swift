@@ -11,19 +11,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let loginViewController = LoginViewController()
+    let logOutViewController = LogOutViewController()
+    let onboardingContainerViewController = OnboardingContainerViewController()
+    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
-//        let LoginViewController = LoginViewController()
-//        LoginViewController.delegate = self
-//        window?.rootViewController = LoginViewController
+        loginViewController.delegate = self
+        window?.rootViewController = loginViewController
         
-        let OnboardingContainerViewController = OnboardingContainerViewController()
-        OnboardingContainerViewController.delegate = self
-        window?.rootViewController = OnboardingContainerViewController
+      
+        logOutViewController.delegate = self
+        onboardingContainerViewController.delegate = self
+      
 
         return true
     }
@@ -31,16 +35,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    
+    func setRootViewcontroller(_ vc:UIViewController, animated: Bool = true) {
+        
+        guard animated, let window = self.window else {
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
+            return
+        }
+        
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+        UIView.transition(with: window, duration: 0.7, options: .transitionCrossDissolve, animations: nil)
+        
+    }
+}
+
 extension AppDelegate: LoginViewControllerDelegate {
     
     func didLogin() {
-        
+        setRootViewcontroller(onboardingContainerViewController)
     }
 
 }
 extension AppDelegate: OnboardingContainerViewControllerDelegate {
     func didFinishOnboarding() {
-        
+        setRootViewcontroller(logOutViewController)
+    }
+ 
+}
+
+extension AppDelegate: LogOutViewControllerDelegate {
+    func didLogOut() {
+        setRootViewcontroller(loginViewController)
     }
     
     

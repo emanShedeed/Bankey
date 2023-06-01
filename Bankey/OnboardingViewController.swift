@@ -13,7 +13,6 @@ class OnboardingViewController: UIViewController {
     let imageView = UIImageView()
     let infoLabel = UILabel()
     
-    let nextButton = UIButton(type:.system)
     
     let infoMessage: String
     let imageName: String
@@ -45,7 +44,7 @@ private extension OnboardingViewController{
     func style() {
         
       
-        nextButton.setTitle("Next", for: [])
+      
   
         imageView.image = UIImage(named: imageName)
         imageView.contentMode = .scaleAspectFit
@@ -64,14 +63,13 @@ private extension OnboardingViewController{
         
        
         view.addSubview(stackView)
-        view.addSubview(nextButton)
+     
         
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(infoLabel)
         
       
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
         
       
         
@@ -83,11 +81,7 @@ private extension OnboardingViewController{
             //stackView.heightAnchor.constraint(equalToConstant: 200)
         ])
         
-        //nextButton
-        NSLayoutConstraint.activate([
-            view.trailingAnchor.constraint(equalToSystemSpacingAfter: nextButton.trailingAnchor, multiplier: 1),
-            view.safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: nextButton.bottomAnchor, multiplier: 1)
-        ])
+      
         
     }
 }
