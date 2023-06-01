@@ -71,12 +71,12 @@
 		BD9D39E02A1B4F900068403A /* Bankey */ = {
 			isa = PBXGroup;
 			children = (
+				BD9D39E12A1B4F900068403A /* AppDelegate.swift */,
+				BD9D39F82A1B5C2D0068403A /* Login */,
+				BD9B48A82A24D6F4000F7A5F /* Onboarding */,
+				BDA66C2B2A27A0FC00930EDB /* LogOut */,
 				BDA834672A287A5C009DEB43 /* Utilites */,
 				BD9D39F72A1B5BFF0068403A /* Files */,
-				BDA66C2B2A27A0FC00930EDB /* LogOut */,
-				BD9B48A82A24D6F4000F7A5F /* Onboarding */,
-				BD9D39F82A1B5C2D0068403A /* Login */,
-				BD9D39E12A1B4F900068403A /* AppDelegate.swift */,
 			);
 			path = Bankey;
 			sourceTree = "<group>";
