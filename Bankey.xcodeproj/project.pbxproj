@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD77320D2A29F5F700913077 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD77320C2A29F5F700913077 /* Colors.xcassets */; };
+		BD77320F2A29F7D600913077 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD77320E2A29F7D600913077 /* UIColor+Extension.swift */; };
 		BD9B48AA2A24D71A000F7A5F /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B48A92A24D71A000F7A5F /* OnboardingContainerViewController.swift */; };
 		BD9B48AC2A24FD40000F7A5F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B48AB2A24FD40000F7A5F /* OnboardingViewController.swift */; };
 		BD9D39E22A1B4F900068403A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D39E12A1B4F900068403A /* AppDelegate.swift */; };
@@ -15,10 +17,14 @@
 		BD9D39EE2A1B4F910068403A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9D39EC2A1B4F910068403A /* LaunchScreen.storyboard */; };
 		BD9D39F62A1B59500068403A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D39F52A1B59500068403A /* LoginView.swift */; };
 		BDA66C2D2A27A11200930EDB /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA66C2C2A27A11200930EDB /* LogOutViewController.swift */; };
+		BDA6E90C2A299D3000CB5BFC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6E90B2A299D3000CB5BFC /* MainViewController.swift */; };
+		BDA6E90E2A299D9C00CB5BFC /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6E90D2A299D9C00CB5BFC /* UIViewController+Utils.swift */; };
 		BDA834692A287A86009DEB43 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA834682A287A86009DEB43 /* LocalState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD77320C2A29F5F700913077 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		BD77320E2A29F7D600913077 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BD9B48A92A24D71A000F7A5F /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		BD9B48AB2A24FD40000F7A5F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		BD9D39DE2A1B4F900068403A /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +35,8 @@
 		BD9D39EF2A1B4F910068403A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD9D39F52A1B59500068403A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BDA66C2C2A27A11200930EDB /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
+		BDA6E90B2A299D3000CB5BFC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BDA6E90D2A299D9C00CB5BFC /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		BDA834682A287A86009DEB43 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +82,7 @@
 				BD9D39E12A1B4F900068403A /* AppDelegate.swift */,
 				BD9D39F82A1B5C2D0068403A /* Login */,
 				BD9B48A82A24D6F4000F7A5F /* Onboarding */,
+				BDA6E90A2A299D0D00CB5BFC /* Main */,
 				BDA66C2B2A27A0FC00930EDB /* LogOut */,
 				BDA834672A287A5C009DEB43 /* Utilites */,
 				BD9D39F72A1B5BFF0068403A /* Files */,
@@ -85,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				BD9D39EA2A1B4F910068403A /* Assets.xcassets */,
+				BD77320C2A29F5F700913077 /* Colors.xcassets */,
 				BD9D39EC2A1B4F910068403A /* LaunchScreen.storyboard */,
 				BD9D39EF2A1B4F910068403A /* Info.plist */,
 			);
@@ -108,10 +118,20 @@
 			name = LogOut;
 			sourceTree = "<group>";
 		};
+		BDA6E90A2A299D0D00CB5BFC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BDA6E90B2A299D3000CB5BFC /* MainViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
 		BDA834672A287A5C009DEB43 /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
 				BDA834682A287A86009DEB43 /* LocalState.swift */,
+				BDA6E90D2A299D9C00CB5BFC /* UIViewController+Utils.swift */,
+				BD77320E2A29F7D600913077 /* UIColor+Extension.swift */,
 			);
 			name = Utilites;
 			sourceTree = "<group>";
@@ -174,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD77320D2A29F5F700913077 /* Colors.xcassets in Resources */,
 				BD9D39EE2A1B4F910068403A /* LaunchScreen.storyboard in Resources */,
 				BD9D39EB2A1B4F910068403A /* Assets.xcassets in Resources */,
 			);
@@ -187,12 +208,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDA66C2D2A27A11200930EDB /* LogOutViewController.swift in Sources */,
+				BDA6E90E2A299D9C00CB5BFC /* UIViewController+Utils.swift in Sources */,
 				BDA834692A287A86009DEB43 /* LocalState.swift in Sources */,
 				BD9D39F62A1B59500068403A /* LoginView.swift in Sources */,
 				BD9D39E62A1B4F900068403A /* LoginViewController.swift in Sources */,
 				BD9B48AC2A24FD40000F7A5F /* OnboardingViewController.swift in Sources */,
 				BD9D39E22A1B4F900068403A /* AppDelegate.swift in Sources */,
 				BD9B48AA2A24D71A000F7A5F /* OnboardingContainerViewController.swift in Sources */,
+				BDA6E90C2A299D3000CB5BFC /* MainViewController.swift in Sources */,
+				BD77320F2A29F7D600913077 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

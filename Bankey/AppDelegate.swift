@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let loginViewController = LoginViewController()
     let logOutViewController = LogOutViewController()
     let onboardingContainerViewController = OnboardingContainerViewController()
+    let mainViewController = MainviewController()
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -22,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
         loginViewController.delegate = self
-        window?.rootViewController = loginViewController
+        window?.rootViewController = mainViewController
         
       
         logOutViewController.delegate = self
@@ -79,3 +80,4 @@ extension AppDelegate: LogOutViewControllerDelegate {
     
     
 }
+
