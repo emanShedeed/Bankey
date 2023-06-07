@@ -36,6 +36,7 @@ private extension MainviewController{
         
         hideNavBarLine(navBar: summaryNC.navigationBar)
         
+        
         setViewControllers([summaryNC, moneyNC, moreNC], animated: true)
         
     }
@@ -52,12 +53,6 @@ private extension MainviewController{
     }
 }
 
-class AccountSummaryViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = UIColor.appColor(.mainColor)
-    }
-}
 
 class MoveMoneyViewController: UIViewController {
     override func viewDidLoad() {
