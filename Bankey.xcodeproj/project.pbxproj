@@ -16,6 +16,8 @@
 		BD9D39EB2A1B4F910068403A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD9D39EA2A1B4F910068403A /* Assets.xcassets */; };
 		BD9D39EE2A1B4F910068403A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9D39EC2A1B4F910068403A /* LaunchScreen.storyboard */; };
 		BD9D39F62A1B59500068403A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D39F52A1B59500068403A /* LoginView.swift */; };
+		BD9D644A2A3044BB0078E900 /* SummaryTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D64492A3044BB0078E900 /* SummaryTableViewHeader.swift */; };
+		BD9D644C2A304FA50078E900 /* SummaryTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD9D644B2A304FA50078E900 /* SummaryTableViewHeader.xib */; };
 		BDA66C2D2A27A11200930EDB /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA66C2C2A27A11200930EDB /* LogOutViewController.swift */; };
 		BDA6E90C2A299D3000CB5BFC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6E90B2A299D3000CB5BFC /* MainViewController.swift */; };
 		BDA6E90E2A299D9C00CB5BFC /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6E90D2A299D9C00CB5BFC /* UIViewController+Utils.swift */; };
@@ -35,6 +37,8 @@
 		BD9D39ED2A1B4F910068403A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD9D39EF2A1B4F910068403A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD9D39F52A1B59500068403A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		BD9D64492A3044BB0078E900 /* SummaryTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewHeader.swift; sourceTree = "<group>"; };
+		BD9D644B2A304FA50078E900 /* SummaryTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryTableViewHeader.xib; sourceTree = "<group>"; };
 		BDA66C2C2A27A11200930EDB /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		BDA6E90B2A299D3000CB5BFC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BDA6E90D2A299D9C00CB5BFC /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				BDC2823E2A2F8E2000CCBD1A /* AccountSummaryViewController.swift */,
+				BD9D64492A3044BB0078E900 /* SummaryTableViewHeader.swift */,
+				BD9D644B2A304FA50078E900 /* SummaryTableViewHeader.xib */,
 			);
 			name = AccountSummary;
 			sourceTree = "<group>";
@@ -206,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD77320D2A29F5F700913077 /* Colors.xcassets in Resources */,
+				BD9D644C2A304FA50078E900 /* SummaryTableViewHeader.xib in Resources */,
 				BD9D39EE2A1B4F910068403A /* LaunchScreen.storyboard in Resources */,
 				BD9D39EB2A1B4F910068403A /* Assets.xcassets in Resources */,
 			);
@@ -219,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDA66C2D2A27A11200930EDB /* LogOutViewController.swift in Sources */,
+				BD9D644A2A3044BB0078E900 /* SummaryTableViewHeader.swift in Sources */,
 				BDA6E90E2A299D9C00CB5BFC /* UIViewController+Utils.swift in Sources */,
 				BDA834692A287A86009DEB43 /* LocalState.swift in Sources */,
 				BD9D39F62A1B59500068403A /* LoginView.swift in Sources */,

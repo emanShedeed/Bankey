@@ -10,22 +10,31 @@ import UIKit
 class AccountSummaryViewController: UIViewController {
     
     let summaryTableView = UITableView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        summaryTableView.delegate = self
-        summaryTableView.dataSource = self
-        style()
-        layout()
-        
+        setupTableView()
     }
     
-  
+    
 }
-extension AccountSummaryViewController{
-    func style(){
-//        summaryTableView.backgroundColor = .systemBlue
+private extension AccountSummaryViewController{
+    
+    func setupTableView(){
+        summaryTableView.delegate = self
+        summaryTableView.dataSource = self
+        layout()
+        setupHeaderView()
     }
+    
+    func setupHeaderView(){
+        let header = SummaryTableViewHeader()
+        var size = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        size.width = UIScreen.main.bounds.width
+        header.frame.size = size
+        summaryTableView.tableHeaderView = header
+    }
+
     func layout(){
         summaryTableView.translatesAutoresizingMaskIntoConstraints = false
         
