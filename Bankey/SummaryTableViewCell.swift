@@ -10,7 +10,7 @@ import UIKit
 class SummaryTableViewCell: UITableViewCell {
     // MARK: Constants
     static let reuseIdentifier = "SummaryTableViewCell"
-    static let cellHeight = 100.0
+    static let cellHeight = 112.0
     
     // MARK: Outlet
     let typeLabel = UILabel()
@@ -37,6 +37,7 @@ class SummaryTableViewCell: UITableViewCell {
     
 }
 private extension SummaryTableViewCell{
+    
     func setup(){
         typeLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
         typeLabel.adjustsFontForContentSizeCategory = true
@@ -55,13 +56,14 @@ private extension SummaryTableViewCell{
         balanceLabel.font = UIFont.preferredFont(forTextStyle: .body)
         balanceLabel.textAlignment = .right
         
-        balanceAmountlabel.text = "$17,543"
+        balanceAmountlabel.attributedText = makeFormattedbalance(dollars: "1777,", cents: "16")
         balanceAmountlabel.textAlignment = .right
         
         chervonImageView.image = UIImage(systemName: "chevron.right")?.withTintColor(UIColor.appColor(.mainColor)!, renderingMode: .alwaysOriginal)
         
       
     }
+    
     func layout(){
         contentView.addSubview(typeLabel)
         contentView.addSubview(underlineView)
@@ -111,5 +113,21 @@ private extension SummaryTableViewCell{
 //            chervonImageView.heightAnchor.constraint(equalToConstant: 15),
 //            chervonImageView.widthAnchor.constraint(equalToConstant: 15)
         ])
+    }
+    
+    func makeFormattedbalance(dollars: String, cents: String)-> NSAttributedString {
+        
+        let dollasrSignAttriputes : [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 8 ]
+        
+        let dollarAttriputes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .title1)]
+        
+        let centAttriputes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .footnote), .baselineOffset: 8]
+        
+        let rootSring = NSMutableAttributedString(string: "$", attributes: dollasrSignAttriputes)
+        let dollarString = NSAttributedString(string: dollars, attributes: dollarAttriputes)
+        let centString = NSAttributedString(string: cents, attributes: centAttriputes)
+        rootSring.append(dollarString)
+        rootSring.append(centString)
+        return rootSring
     }
 }
