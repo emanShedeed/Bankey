@@ -7,8 +7,9 @@
 
 import UIKit
 
+
 class AccountSummaryViewController: UIViewController {
-    
+  
     let summaryTableView = UITableView()
     
     override func viewDidLoad() {
@@ -23,6 +24,8 @@ private extension AccountSummaryViewController{
     func setupTableView(){
         summaryTableView.delegate = self
         summaryTableView.dataSource = self
+        summaryTableView.rowHeight = SummaryTableViewCell.cellHeight
+        registerTableViewCell()
         layout()
         setupHeaderView()
     }
@@ -48,6 +51,10 @@ private extension AccountSummaryViewController{
         ])
         
     }
+    func  registerTableViewCell(){
+        
+        summaryTableView.register(SummaryTableViewCell.self, forCellReuseIdentifier: SummaryTableViewCell.reuseIdentifier)
+    }
 }
 
 extension AccountSummaryViewController: UITableViewDelegate {
@@ -61,13 +68,8 @@ extension AccountSummaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "\(indexPath.row)"
-        cell.textLabel?.textColor = .systemBlue
+        let cell = tableView.dequeueReusableCell(withIdentifier: SummaryTableViewCell.reuseIdentifier , for: indexPath) as! SummaryTableViewCell
         return cell
     }
-    
-    
 }

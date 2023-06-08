@@ -18,6 +18,7 @@
 		BD9D39F62A1B59500068403A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D39F52A1B59500068403A /* LoginView.swift */; };
 		BD9D644A2A3044BB0078E900 /* SummaryTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D64492A3044BB0078E900 /* SummaryTableViewHeader.swift */; };
 		BD9D644C2A304FA50078E900 /* SummaryTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD9D644B2A304FA50078E900 /* SummaryTableViewHeader.xib */; };
+		BD9D64502A30D33F0078E900 /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D644F2A30D33F0078E900 /* SummaryTableViewCell.swift */; };
 		BDA66C2D2A27A11200930EDB /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA66C2C2A27A11200930EDB /* LogOutViewController.swift */; };
 		BDA6E90C2A299D3000CB5BFC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6E90B2A299D3000CB5BFC /* MainViewController.swift */; };
 		BDA6E90E2A299D9C00CB5BFC /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6E90D2A299D9C00CB5BFC /* UIViewController+Utils.swift */; };
@@ -39,6 +40,7 @@
 		BD9D39F52A1B59500068403A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BD9D64492A3044BB0078E900 /* SummaryTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewHeader.swift; sourceTree = "<group>"; };
 		BD9D644B2A304FA50078E900 /* SummaryTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryTableViewHeader.xib; sourceTree = "<group>"; };
+		BD9D644F2A30D33F0078E900 /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
 		BDA66C2C2A27A11200930EDB /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		BDA6E90B2A299D3000CB5BFC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BDA6E90D2A299D9C00CB5BFC /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
@@ -117,6 +119,23 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		BD9D644D2A30D2450078E900 /* TableViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+				BD9D64492A3044BB0078E900 /* SummaryTableViewHeader.swift */,
+				BD9D644B2A304FA50078E900 /* SummaryTableViewHeader.xib */,
+			);
+			name = TableViewHeader;
+			sourceTree = "<group>";
+		};
+		BD9D644E2A30D25C0078E900 /* SummaryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BD9D644F2A30D33F0078E900 /* SummaryTableViewCell.swift */,
+			);
+			name = SummaryTableViewCell;
+			sourceTree = "<group>";
+		};
 		BDA66C2B2A27A0FC00930EDB /* LogOut */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,8 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				BDC2823E2A2F8E2000CCBD1A /* AccountSummaryViewController.swift */,
-				BD9D64492A3044BB0078E900 /* SummaryTableViewHeader.swift */,
-				BD9D644B2A304FA50078E900 /* SummaryTableViewHeader.xib */,
+				BD9D644D2A30D2450078E900 /* TableViewHeader */,
+				BD9D644E2A30D25C0078E900 /* SummaryTableViewCell */,
 			);
 			name = AccountSummary;
 			sourceTree = "<group>";
@@ -225,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD9D64502A30D33F0078E900 /* SummaryTableViewCell.swift in Sources */,
 				BDA66C2D2A27A11200930EDB /* LogOutViewController.swift in Sources */,
 				BD9D644A2A3044BB0078E900 /* SummaryTableViewHeader.swift in Sources */,
 				BDA6E90E2A299D9C00CB5BFC /* UIViewController+Utils.swift in Sources */,
