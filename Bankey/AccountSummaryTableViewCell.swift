@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SummaryTableViewCell: UITableViewCell {
+class AccountSummaryTableViewCell: UITableViewCell {
     // MARK: Constants
     static let reuseIdentifier = "SummaryTableViewCell"
     static let cellHeight = 112.0
@@ -35,24 +35,46 @@ class SummaryTableViewCell: UITableViewCell {
         // Initialization code
     }
     
+    func configure(with model:AccountSummaryModel){
+        
+        typeLabel.text = model.accountType.rawValue
+        nameLabel.text = model.accountName
+        balanceAmountlabel.text = "\(model.balanceAmount)"
+        
+        switch model.accountType{
+            
+        case .banking:
+            underlineView.backgroundColor = UIColor.appColor(.mainColor)
+            balanceLabel.text = "Current balance"
+        case .creditCard:
+            underlineView.backgroundColor = UIColor.systemOrange
+            balanceLabel.text = "Current balance"
+        case .investment:
+            underlineView.backgroundColor = UIColor.systemPurple
+            balanceLabel.text = "Value"
+        }
+        
+        
+    }
+    
 }
-private extension SummaryTableViewCell{
+private extension AccountSummaryTableViewCell{
     
     func setup(){
         typeLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
         typeLabel.adjustsFontForContentSizeCategory = true
-        typeLabel.text = "Banking"
+
         
         underlineView.backgroundColor = UIColor.appColor(.mainColor)
         
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
         nameLabel.adjustsFontForContentSizeCategory = true
-        nameLabel.text = "No_Fee_All_In chequing"
+
         
         balanceStackView.axis = .vertical
         balanceStackView.spacing = 0
         
-        balanceLabel.text = "Current balance"
+
         balanceLabel.font = UIFont.preferredFont(forTextStyle: .body)
         balanceLabel.textAlignment = .right
         
