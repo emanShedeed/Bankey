@@ -39,7 +39,7 @@ class AccountSummaryTableViewCell: UITableViewCell {
         
         typeLabel.text = model.accountType.rawValue
         nameLabel.text = model.accountName
-        balanceAmountlabel.attributedText = CurrencyFormatter().makeAttributedCurrency(model.balanceAmount)
+        balanceAmountlabel.attributedText = model.balanceAttriputedString
         
         switch model.accountType{
             

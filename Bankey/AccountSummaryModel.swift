@@ -15,4 +15,7 @@ struct AccountSummaryModel{
     let accountType: AccountType
     let accountName: String
     let balanceAmount: Double
+    var balanceAttriputedString: NSAttributedString{
+        CurrencyFormatter().makeAttributedCurrency(balanceAmount)
+    }
 }
