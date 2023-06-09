@@ -53,19 +53,37 @@ private extension AccountSummaryViewController{
         ])
         
     }
+    
     func  registerTableViewCell(){
         
         summaryTableView.register(AccountSummaryTableViewCell.self, forCellReuseIdentifier: AccountSummaryTableViewCell.reuseIdentifier)
     }
+    
     func fetchData() {
-        let savings = AccountSummaryModel(accountType: .banking, accountName: "Basic Savings", balanceAmount: 0.0)
+        let savings = AccountSummaryModel(accountType: .banking,
+                                          accountName: "Basic Savings",
+                                      balanceAmount: 929466.23)
        
-        let visa = AccountSummaryModel(accountType: .creditCard, accountName: "Visa Avion Card", balanceAmount: 0.0)
-        let investment = AccountSummaryModel(accountType: .investment, accountName: "Tax-Free Saver", balanceAmount: 0.0)
+        let chequing = AccountSummaryModel(accountType: .banking,
+                                       accountName: "No-Fee All-In Chequing",
+                                       balanceAmount: 17562.44)
         
-        accounts.append(savings)
-        accounts.append(visa)
-        accounts.append(investment)
+        let visa = AccountSummaryModel(accountType: .creditCard,
+                                                accountName: "Visa Avion Card",
+                                                balanceAmount: 412.83)
+        
+        let masterCard = AccountSummaryModel(accountType: .creditCard,
+                                                       accountName: "Student Mastercard",
+                                                       balanceAmount: 50.83)
+        
+        let investment1 = AccountSummaryModel(accountType: .investment,
+                                                       accountName: "Tax-Free Saver",
+                                                       balanceAmount: 2000.00)
+        
+        let investment2 = AccountSummaryModel(accountType: .investment,
+                                                       accountName: "Growth Fund",
+                                                       balanceAmount: 15000.00)
+        accounts.append(contentsOf: [savings, chequing, visa, masterCard, investment1, investment2])
     }
 }
 

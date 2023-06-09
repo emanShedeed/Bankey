@@ -20,6 +20,7 @@
 		BD9D644C2A304FA50078E900 /* SummaryTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD9D644B2A304FA50078E900 /* SummaryTableViewHeader.xib */; };
 		BD9D64502A30D33F0078E900 /* AccountSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D644F2A30D33F0078E900 /* AccountSummaryTableViewCell.swift */; };
 		BD9D64562A3222FE0078E900 /* AccountSummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D64552A3222FE0078E900 /* AccountSummaryModel.swift */; };
+		BDA200062A331316008BF43C /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA200052A331316008BF43C /* CurrencyFormatter.swift */; };
 		BDA66C2D2A27A11200930EDB /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA66C2C2A27A11200930EDB /* LogOutViewController.swift */; };
 		BDA6E90C2A299D3000CB5BFC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6E90B2A299D3000CB5BFC /* MainViewController.swift */; };
 		BDA6E90E2A299D9C00CB5BFC /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6E90D2A299D9C00CB5BFC /* UIViewController+Utils.swift */; };
@@ -43,6 +44,7 @@
 		BD9D644B2A304FA50078E900 /* SummaryTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryTableViewHeader.xib; sourceTree = "<group>"; };
 		BD9D644F2A30D33F0078E900 /* AccountSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		BD9D64552A3222FE0078E900 /* AccountSummaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryModel.swift; sourceTree = "<group>"; };
+		BDA200052A331316008BF43C /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		BDA66C2C2A27A11200930EDB /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		BDA6E90B2A299D3000CB5BFC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BDA6E90D2A299D9C00CB5BFC /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				BDA834682A287A86009DEB43 /* LocalState.swift */,
 				BDA6E90D2A299D9C00CB5BFC /* UIViewController+Utils.swift */,
 				BD77320E2A29F7D600913077 /* UIColor+Extension.swift */,
+				BDA200052A331316008BF43C /* CurrencyFormatter.swift */,
 			);
 			name = Utilites;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				BDA66C2D2A27A11200930EDB /* LogOutViewController.swift in Sources */,
 				BD9D644A2A3044BB0078E900 /* SummaryTableViewHeader.swift in Sources */,
 				BDA6E90E2A299D9C00CB5BFC /* UIViewController+Utils.swift in Sources */,
+				BDA200062A331316008BF43C /* CurrencyFormatter.swift in Sources */,
 				BDA834692A287A86009DEB43 /* LocalState.swift in Sources */,
 				BD9D39F62A1B59500068403A /* LoginView.swift in Sources */,
 				BD9D39E62A1B4F900068403A /* LoginViewController.swift in Sources */,

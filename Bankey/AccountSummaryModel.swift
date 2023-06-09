@@ -14,5 +14,5 @@ enum AccountType: String{
 struct AccountSummaryModel{
     let accountType: AccountType
     let accountName: String
-    let balanceAmount: Decimal
+    let balanceAmount: Double
 }
