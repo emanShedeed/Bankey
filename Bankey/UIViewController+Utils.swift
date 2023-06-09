@@ -8,6 +8,13 @@
 import UIKit
 
 extension UIViewController {
+    func setStatusBar() {
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithTransparentBackground() // to hide Navigation Bar Line also
+        navBarAppearance.backgroundColor = UIColor.appColor(.mainColor)
+        UINavigationBar.appearance().standardAppearance = navBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+    }
     
     func setTabBarItem(imageName: String, imageTitle:String) {
         let configuration = UIImage.SymbolConfiguration(scale: .large)

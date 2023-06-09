@@ -15,6 +15,7 @@ class AccountSummaryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.appColor(.mainColor)
         fetchData()
         setupTableView()
     }
@@ -24,6 +25,7 @@ class AccountSummaryViewController: UIViewController {
 private extension AccountSummaryViewController{
     
     func setupTableView(){
+        summaryTableView.backgroundColor = UIColor.appColor(.mainColor)
         summaryTableView.delegate = self
         summaryTableView.dataSource = self
         summaryTableView.rowHeight = AccountSummaryTableViewCell.cellHeight

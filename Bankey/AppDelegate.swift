@@ -23,7 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
         loginViewController.delegate = self
-        window?.rootViewController = mainViewController
+        let vc = mainViewController
+        vc.setStatusBar()
+        window?.rootViewController = vc
         
       
         logOutViewController.delegate = self
@@ -57,7 +59,7 @@ extension AppDelegate: LoginViewControllerDelegate {
     
     func didLogin() {
         if LocalState.hasOnboarderd {
-            setRootViewcontroller(logOutViewController)
+            setRootViewcontroller(mainViewController)
         }
         else{
             setRootViewcontroller(onboardingContainerViewController)
@@ -68,7 +70,7 @@ extension AppDelegate: LoginViewControllerDelegate {
 extension AppDelegate: OnboardingContainerViewControllerDelegate {
     func didFinishOnboarding() {
         LocalState.hasOnboarderd = true
-        setRootViewcontroller(logOutViewController)
+        setRootViewcontroller(mainViewController)
     }
  
 }

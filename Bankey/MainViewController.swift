@@ -34,19 +34,10 @@ private extension MainviewController{
         
         summaryNC.navigationBar.barTintColor = UIColor.appColor(.mainColor)
         
-        hideNavBarLine(navBar: summaryNC.navigationBar)
-        
-        
         setViewControllers([summaryNC, moneyNC, moreNC], animated: true)
         
     }
-    
-    func hideNavBarLine(navBar: UINavigationBar?){
-        navBar?.shadowImage = UIImage()
-        navBar?.setBackgroundImage(UIImage(), for: .default)
-        navBar?.isTranslucent = false
-    }
-    
+
     func setupTabBar(){
         tabBar.tintColor = UIColor.appColor(.mainColor)!
         tabBar.isTranslucent = false
