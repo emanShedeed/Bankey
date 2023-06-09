@@ -10,17 +10,17 @@ import Foundation
 public class LocalState{
     
     private enum Keys: String{
-        case hasonboarder
+        case hasOnboarded
     }
     
     private static let userDefaults = UserDefaults.standard
     
     public static var hasOnboarderd: Bool {
         get{
-            userDefaults.bool(forKey: Keys.hasonboarder.rawValue )
+            userDefaults.bool(forKey: Keys.hasOnboarded.rawValue )
         }
         set(newValue){
-            userDefaults.set(newValue, forKey: Keys.hasonboarder.rawValue)
+            userDefaults.set(newValue, forKey: Keys.hasOnboarded.rawValue)
         }
     }
 }

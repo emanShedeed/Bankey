@@ -9,7 +9,7 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     let loginViewController = LoginViewController()
     let logOutViewController = LogOutViewController()
@@ -18,29 +18,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-      
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
         loginViewController.delegate = self
-        let vc = mainViewController
-        vc.setStatusBar()
-        window?.rootViewController = vc
-        
-      
-        logOutViewController.delegate = self
         onboardingContainerViewController.delegate = self
-      
-
+        displayLogin()
         return true
     }
-
-
+    
+    private func displayLogin() {
+        setRootViewController(loginViewController)
+    }
+    
+    private func displayNextScreen() {
+        if LocalState.hasOnboarderd {
+            prepMainView()
+            setRootViewController(mainViewController)
+        } else {
+            setRootViewController(onboardingContainerViewController)
+        }
+    }
+    
+    private func prepMainView() {
+        mainViewController.setStatusBar()
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().backgroundColor = UIColor.appColor(.mainColor)
+    }
+    
 }
 
 extension AppDelegate {
     
-    func setRootViewcontroller(_ vc:UIViewController, animated: Bool = true) {
+    func setRootViewController(_ vc:UIViewController, animated: Bool = true) {
         
         guard animated, let window = self.window else {
             self.window?.rootViewController = vc
@@ -58,26 +69,22 @@ extension AppDelegate {
 extension AppDelegate: LoginViewControllerDelegate {
     
     func didLogin() {
-        if LocalState.hasOnboarderd {
-            setRootViewcontroller(mainViewController)
-        }
-        else{
-            setRootViewcontroller(onboardingContainerViewController)
-        }
+      displayNextScreen()
     }
-
+    
 }
 extension AppDelegate: OnboardingContainerViewControllerDelegate {
     func didFinishOnboarding() {
         LocalState.hasOnboarderd = true
-        setRootViewcontroller(mainViewController)
+        prepMainView()
+        setRootViewController(mainViewController)
     }
- 
+    
 }
 
 extension AppDelegate: LogOutViewControllerDelegate {
     func didLogOut() {
-        setRootViewcontroller(loginViewController)
+        setRootViewController(loginViewController)
     }
     
     
