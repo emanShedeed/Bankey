@@ -13,13 +13,20 @@ protocol LoginViewControllerDelegate: AnyObject {
 
 class LoginViewController: UIViewController {
     
+    // MARK: Property
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
     
+    //MARK: Constants
     weak var delegate: LoginViewControllerDelegate?
+    
+    private let leadingEdgeOnScreen: CGFloat = 16
+    private let leadingEdgeOffScreen: CGFloat = -1000
+    private var titleLeadingAnchor: NSLayoutConstraint?
+    private var subTitleLeadingAnchor: NSLayoutConstraint?
     
     var isDataEmpty : Bool {
         if loginView.userNameTextField.text == "" || loginView.passwordTextField.text == "" {
@@ -43,6 +50,10 @@ class LoginViewController: UIViewController {
         style()
         layout()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animate()
+    }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         signInButton.configuration?.showsActivityIndicator = false
@@ -56,10 +67,12 @@ private extension LoginViewController{
         titleLabel.text = "Bankey"
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
+        titleLabel.alpha = 0
         
         subtitleLabel.text = "Your Premium Source for all things banking"
         subtitleLabel.numberOfLines = 2
         subtitleLabel.textAlignment = .center
+        subtitleLabel.alpha = 0
         
         //signInButton
         signInButton.configuration = .filled()
@@ -93,17 +106,19 @@ private extension LoginViewController{
         //titleLabel
         NSLayoutConstraint.activate([
             subtitleLabel.topAnchor.constraint(greaterThanOrEqualToSystemSpacingBelow: titleLabel.bottomAnchor, multiplier: 3),
-            titleLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: titleLabel.trailingAnchor, multiplier: 1)
         ])
+        
+        titleLeadingAnchor = titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leadingEdgeOffScreen)
+        titleLeadingAnchor?.isActive = true
         
         //subtitleLabel
         NSLayoutConstraint.activate([
             loginView.topAnchor.constraint(greaterThanOrEqualToSystemSpacingBelow: subtitleLabel.bottomAnchor, multiplier: 3),
-            subtitleLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: subtitleLabel.trailingAnchor, multiplier: 1)
         ])
-        
+        subTitleLeadingAnchor =  subtitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leadingEdgeOffScreen)
+        subTitleLeadingAnchor?.isActive = true
         //loginView
         NSLayoutConstraint.activate([
             loginView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -142,6 +157,35 @@ private extension LoginViewController{
     func configureLabel(withMessage message: String){
         errorMessageLabel.isHidden = false
         errorMessageLabel.text = message
+    }
+    
+    func animate(){
+        let duration = 0.75
+        let labelAnimator = UIViewPropertyAnimator(duration: duration, curve: .easeInOut){ [weak self] in
+            guard let self  else { return }
+            self.titleLeadingAnchor?.constant = self.leadingEdgeOnScreen
+            self.view.layoutIfNeeded()
+        }
+        labelAnimator.startAnimation()
+        
+        //subtitleLabelAnimator
+        let subTitlelabelAnimator = UIViewPropertyAnimator(duration: duration, curve: .easeInOut){ [weak self] in
+            guard let self  else { return }
+            self.subTitleLeadingAnchor?.constant = self.leadingEdgeOnScreen
+            self.view.layoutIfNeeded()
+
+        }
+        subTitlelabelAnimator.startAnimation(afterDelay: 1)
+        //fadeAnimator
+        let fadeAnimator = UIViewPropertyAnimator(duration: duration * 2, curve: .easeInOut){ [weak self] in
+            
+            guard let self  else { return }
+            self.titleLabel.alpha = 1
+            self.subtitleLabel.alpha = 1
+            self.view.layoutIfNeeded()
+        }
+        fadeAnimator.startAnimation(afterDelay: 1)
+       
     }
 }
 
