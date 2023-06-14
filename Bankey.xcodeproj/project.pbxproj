@@ -22,6 +22,8 @@
 		BD9D64562A3222FE0078E900 /* AccountSummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D64552A3222FE0078E900 /* AccountSummaryModel.swift */; };
 		BDA200062A331316008BF43C /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA200052A331316008BF43C /* CurrencyFormatter.swift */; };
 		BDA2000E2A334A99008BF43C /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA2000D2A334A99008BF43C /* CurrencyFormatterTests.swift */; };
+		BDA562402A38B7F3008404C9 /* NSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA5623F2A38B7F3008404C9 /* NSNotification.swift */; };
+		BDA562422A38CE85008404C9 /* UITextField+SecureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA562412A38CE85008404C9 /* UITextField+SecureToggle.swift */; };
 		BDA66C2D2A27A11200930EDB /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA66C2C2A27A11200930EDB /* LogOutViewController.swift */; };
 		BDA6E90C2A299D3000CB5BFC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6E90B2A299D3000CB5BFC /* MainViewController.swift */; };
 		BDA6E90E2A299D9C00CB5BFC /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6E90D2A299D9C00CB5BFC /* UIViewController+Utils.swift */; };
@@ -58,6 +60,8 @@
 		BDA200052A331316008BF43C /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		BDA2000B2A334A99008BF43C /* BankeyUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA2000D2A334A99008BF43C /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
+		BDA5623F2A38B7F3008404C9 /* NSNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotification.swift; sourceTree = "<group>"; };
+		BDA562412A38CE85008404C9 /* UITextField+SecureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+SecureToggle.swift"; sourceTree = "<group>"; };
 		BDA66C2C2A27A11200930EDB /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		BDA6E90B2A299D3000CB5BFC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BDA6E90D2A299D9C00CB5BFC /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
@@ -205,10 +209,12 @@
 		BDA834672A287A5C009DEB43 /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
-				BDA834682A287A86009DEB43 /* LocalState.swift */,
 				BDA6E90D2A299D9C00CB5BFC /* UIViewController+Utils.swift */,
 				BD77320E2A29F7D600913077 /* UIColor+Extension.swift */,
+				BDA562412A38CE85008404C9 /* UITextField+SecureToggle.swift */,
+				BDA834682A287A86009DEB43 /* LocalState.swift */,
 				BDA200052A331316008BF43C /* CurrencyFormatter.swift */,
+				BDA5623F2A38B7F3008404C9 /* NSNotification.swift */,
 			);
 			name = Utilites;
 			sourceTree = "<group>";
@@ -333,9 +339,11 @@
 				BDA200062A331316008BF43C /* CurrencyFormatter.swift in Sources */,
 				BDA834692A287A86009DEB43 /* LocalState.swift in Sources */,
 				BD9D39F62A1B59500068403A /* LoginView.swift in Sources */,
+				BDA562402A38B7F3008404C9 /* NSNotification.swift in Sources */,
 				BD9D39E62A1B4F900068403A /* LoginViewController.swift in Sources */,
 				BD9B48AC2A24FD40000F7A5F /* OnboardingViewController.swift in Sources */,
 				BD9D39E22A1B4F900068403A /* AppDelegate.swift in Sources */,
+				BDA562422A38CE85008404C9 /* UITextField+SecureToggle.swift in Sources */,
 				BD9B48AA2A24D71A000F7A5F /* OnboardingContainerViewController.swift in Sources */,
 				BD9D64562A3222FE0078E900 /* AccountSummaryModel.swift in Sources */,
 				BDC2823F2A2F8E2000CCBD1A /* AccountSummaryViewController.swift in Sources */,

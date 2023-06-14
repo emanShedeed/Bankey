@@ -68,7 +68,8 @@ private extension AccountSummaryTableViewCell{
         underlineView.backgroundColor = UIColor.appColor(.mainColor)
         
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
-        nameLabel.adjustsFontForContentSizeCategory = true
+        nameLabel.adjustsFontSizeToFitWidth = true
+     
 
         
         balanceStackView.axis = .vertical
