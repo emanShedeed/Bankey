@@ -101,8 +101,6 @@ private extension LoginViewController{
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         errorMessageLabel.translatesAutoresizingMaskIntoConstraints = false
         
-     
-        
         //titleLabel
         NSLayoutConstraint.activate([
             subtitleLabel.topAnchor.constraint(greaterThanOrEqualToSystemSpacingBelow: titleLabel.bottomAnchor, multiplier: 3),
@@ -119,20 +117,22 @@ private extension LoginViewController{
         ])
         subTitleLeadingAnchor =  subtitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leadingEdgeOffScreen)
         subTitleLeadingAnchor?.isActive = true
+        
         //loginView
         NSLayoutConstraint.activate([
             loginView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             loginView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             loginView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  -8),
         ])
+        
         // signInButton
         NSLayoutConstraint.activate([
             signInButton.topAnchor.constraint(greaterThanOrEqualToSystemSpacingBelow: loginView.bottomAnchor, multiplier: 2),
             signInButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: signInButton.trailingAnchor, multiplier: 1)
         ])
-        // errorMessageLabel
         
+        // errorMessageLabel
         NSLayoutConstraint.activate([
             errorMessageLabel.topAnchor.constraint(greaterThanOrEqualToSystemSpacingBelow: signInButton.bottomAnchor, multiplier: 2),
             errorMessageLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
@@ -140,6 +140,7 @@ private extension LoginViewController{
         ])
         
     }
+    
     func login(){
         if isDataEmpty{
             configureLabel(withMessage: "username / Password cannot be blank")
@@ -154,9 +155,27 @@ private extension LoginViewController{
         }
         
     }
+    
     func configureLabel(withMessage message: String){
         errorMessageLabel.isHidden = false
         errorMessageLabel.text = message
+        shakeSignInButton()
+    }
+
+}
+
+// MARK: Animations
+private extension LoginViewController {
+    
+    func shakeSignInButton(){
+        let shakeAnimaton = CAKeyframeAnimation()
+        shakeAnimaton.keyPath = "position.x"
+        shakeAnimaton.values = [0, 10, -10, 0]
+        shakeAnimaton.keyTimes = [0, 0.16, 0.5, 0.85 , 1]
+        shakeAnimaton.duration = 0.8
+        shakeAnimaton.isAdditive = true
+        
+        signInButton.layer.add(shakeAnimaton, forKey: "shake")
     }
     
     func animate(){
