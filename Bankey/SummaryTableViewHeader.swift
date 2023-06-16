@@ -10,6 +10,7 @@ import UIKit
 class SummaryTableViewHeader: UIView {
     
     @IBOutlet var contentView: UIView!
+    let shakeyBellView = ShakeyBellView()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -38,16 +39,24 @@ private extension SummaryTableViewHeader{
     
     func style(){
         contentView.backgroundColor = UIColor.appColor(.mainColor)
+   
     }
     
     func layout(){
         contentView.translatesAutoresizingMaskIntoConstraints = false
+        shakeyBellView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(contentView)
+        contentView.addSubview(shakeyBellView)
+        
         NSLayoutConstraint.activate([
             contentView.topAnchor.constraint(equalTo: topAnchor),
             contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            contentView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+           // shakeyBellView
+            shakeyBellView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            shakeyBellView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
     

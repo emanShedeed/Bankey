@@ -62,7 +62,7 @@ private extension AccountSummaryTableViewCell{
     
     func setup(){
         typeLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
-        typeLabel.adjustsFontForContentSizeCategory = true
+//        typeLabel.adjustsFontForContentSizeCategory = true
 
         
         underlineView.backgroundColor = UIColor.appColor(.mainColor)
@@ -78,9 +78,11 @@ private extension AccountSummaryTableViewCell{
 
         balanceLabel.font = UIFont.preferredFont(forTextStyle: .body)
         balanceLabel.textAlignment = .right
+        balanceLabel.adjustsFontSizeToFitWidth = true
         
         balanceAmountlabel.text = "xxx.xx"
         balanceAmountlabel.textAlignment = .right
+        balanceAmountlabel.adjustsFontSizeToFitWidth = true
         
         chervonImageView.image = UIImage(systemName: "chevron.right")?.withTintColor(UIColor.appColor(.mainColor)!, renderingMode: .alwaysOriginal)
         

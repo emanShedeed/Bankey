@@ -30,14 +30,16 @@ class LoginViewController: UIViewController {
     
     var isDataEmpty : Bool {
         if loginView.userNameTextField.text == "" || loginView.passwordTextField.text == "" {
-            return true
+            //return true
+            return false
         }else{
             return false
         }
     }
     
     var isCorrectLoginData : Bool {
-        if loginView.userNameTextField.text == "Eman"  && loginView.passwordTextField.text == "123456" {
+//        if loginView.userNameTextField.text == "Eman"  && loginView.passwordTextField.text == "123456" {
+        if loginView.userNameTextField.text == ""  && loginView.passwordTextField.text == "" {
             return true
         }else{
             return false
