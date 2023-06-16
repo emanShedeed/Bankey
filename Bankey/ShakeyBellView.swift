@@ -10,6 +10,8 @@ import UIKit
 class ShakeyBellView: UIView {
     
     let bellImageView = UIImageView()
+    let countButton = UIButton()
+    let countButtonHeight = 16.0
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -36,17 +38,35 @@ private extension ShakeyBellView {
     func style() {
         bellImageView.image = UIImage(systemName: "bell.fill")?.withTintColor(.white, renderingMode: .alwaysOriginal)
         
+        countButton.backgroundColor = .systemRed
+        countButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        countButton.layer.cornerRadius = countButtonHeight/2
+        countButton.setTitleColor(.white, for: .normal)
+        countButton.setTitle("9", for: .normal)
+//        countButton.clipsToBounds = true
+        
     }
     
     func layout(){
-        addSubview(bellImageView)
         bellImageView.translatesAutoresizingMaskIntoConstraints = false
+        countButton.translatesAutoresizingMaskIntoConstraints = false
         
+        addSubview(bellImageView)
+        addSubview(countButton)
+        
+        //bellImageView
         NSLayoutConstraint.activate([
             bellImageView.widthAnchor.constraint(equalToConstant: 24),
             bellImageView.heightAnchor.constraint(equalToConstant: 24),
             bellImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             bellImageView.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            countButton.topAnchor.constraint(equalTo: bellImageView.topAnchor),
+            countButton.leadingAnchor.constraint(equalTo: bellImageView.trailingAnchor, constant: -9),
+            countButton.widthAnchor.constraint(equalToConstant: countButtonHeight),
+            countButton.heightAnchor.constraint(equalToConstant: countButtonHeight)
         ])
         
         
